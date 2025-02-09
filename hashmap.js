@@ -5,7 +5,7 @@ constructor() {
         }
 
 
-        function hash(key) {
+         hash(key) {
             let hashCode = 0;
                
             const primeNumber = 31;
@@ -18,9 +18,29 @@ constructor() {
          
 
 
+          set(key, value) {
+            const index = this._hash(key);
+            if (!this.buckets[index]) {
+              this.buckets[index] = [];
+            }
+            this.buckets[index].push({ key, value });
+          }
 
 
 
+
+
+
+
+
+
+
+
+
+         }
+       
+
+  
 
 
 
