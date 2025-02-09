@@ -1,0 +1,130 @@
+INFORMATION
+
+What is hashing?
+
+hashing is essential for fast lookups, efficient storage, handling large data, avoiding duplicates, and security.
+
+hashing involves taking an input in and generating a corresponding output. 
+
+the hash itself is not stored in most hash table implementations. Instead, the key-value pair is stored at the index determined by the hash function.
+
+hashing is deciding an index for key-value pair.
+
+
+
+---
+
+What are buckets?
+
+
+buckets are inside the mailbox whereas mailbox itself is an index.
+
+buckets are containers at indexes in a hash table where key-value pairs are stored.
+
+A key is hashed → Produces an index.
+
+The key-value pair is placed inside a bucket at that index.
+
+If multiple keys hash to the same index (collision), they are stored inside the same bucket.
+
+collision happens when two hashes in a bucket has the same value.
+
+
+---
+
+Computation complexity
+
+we need to increase the number of buckets if it is required.
+
+---
+
+Summary 
+
+Hash maps store key-value pairs and provide fast lookups.
+
+A hash function converts a key into a hash code.
+
+The hash code determines the bucket (storage location).
+
+Collisions occur when different keys generate the same hash.
+
+Linked lists help store multiple values in the same bucket.
+
+Order is not maintained, so data retrieval is unpredictable.
+
+
+
+SYNTAX
+
+
+set(key, value) – Adds a key-value pair.
+get(key) – Retrieves the value associated with the given key.
+has(key) – Checks if the key exists in the map.
+delete(key) – Removes the key-value pair for the given key.
+clear() – Clears all key-value pairs in the map.
+size – The number of key-value pairs in the map.
+
+// Create a new HashMap (using an object in JavaScript)
+let myHashMap = new Map();
+
+// Adding key-value pairs
+myHashMap.set("key1", "value1");
+myHashMap.set("key2", "value2");
+myHashMap.set("key3", "value3");
+
+// Accessing values by key
+console.log(myHashMap.get("key1"));  // Output: value1
+console.log(myHashMap.get("key2"));  // Output: value2
+
+// Checking if a key exists
+console.log(myHashMap.has("key1"));  // Output: true
+console.log(myHashMap.has("key4"));  // Output: false
+
+// Removing a key-value pair
+myHashMap.delete("key3");
+
+// Checking the size of the HashMap
+console.log(myHashMap.size);  // Output: 2
+
+// Iterating through the HashMap
+myHashMap.forEach((value, key) => {
+  console.log(key + " => " + value);
+});
+
+// Clearing all entries in the HashMap
+myHashMap.clear();
+
+--
+
+let myHashMap = new Map();
+myHashMap.set("name", "John");
+myHashMap.set("age", 30);
+
+console.log(myHashMap.get("name"));  // Output: John
+console.log(myHashMap.get("age")); 
+
+
+!! code to give error if we try to access an out-of-bounds index:
+
+if (index < 0 || index >= buckets.length) {
+  throw new Error("Trying to access index out of bounds");
+}
+
+
+
+----
+
+FURTHER 
+
+class HashTable {
+  constructor(size = 10) {
+    this.buckets = new Array(size);
+  }
+
+We use this.buckets = new Array(size); to decide the size of index/table.
+
+We use remainder of the modulo to decide the place of the index of the array to place key-object values.
+
+
+
+
