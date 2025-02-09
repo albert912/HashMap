@@ -12,6 +12,6 @@ When stuck, ask for help! That's what social media is for.
 
 -----
 
-1. Figure out how to write capacity/load factor inside the Hashmap class.
+1. Figure out how to write capacity/load factor for HashMap class.
 
 2. Try to focus on just one method.
