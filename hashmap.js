@@ -188,3 +188,6 @@ class HashMap {
 
   console.log(test.clear());
   
+
+
+  
