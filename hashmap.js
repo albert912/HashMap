@@ -168,7 +168,6 @@ class HashMap {
 
 
 
-
  
 
   console.log(test.get('ice cream'));
